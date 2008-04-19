@@ -1,0 +1,97 @@
+NAME
+    Picasa - Perl interface to Picasaweb API
+
+INSTALLATION 
+    1. download Picasa distribution from CPAN and extract the tarball
+    2. chdir to extracted directory
+    3. perl Makefile.PL
+    4. make
+    5. make install
+    6. make test
+
+SYNOPSIS
+        use Picasa;
+
+        my $api = new Picasa;
+        my $albums = $api->get_list_of_albums({'userid'=><google userid>; 'access'=>'public|private'});
+        $api->add_album({'userid'=><google userid>; 'album'=><album-name>; 'access'=>'public|private'});
+        $api->get_list_of_photos({'userid'=><google userid>; 'album'=><album-name>; 'dir'=><path-to-download>;'access'=>'public|private'; 'size'=>'small|medium|large'});
+        $api->add_photo({'userid'=><google userid>; 'album'=><album-name>; 'photo'=><photo-to-upload>; 'access'=>'public|private'; 'keywords'=><keywords>});
+
+DESCRIPTION
+    A simple interface for using Picasaweb API. This is a base class for Picasa::Album and Picasa::Photo, which contains the actual function definition.
+  METHODS
+    "get_list_of_albums(...)"
+            To return list of albums for a given google user id. The function takes a reference to hash as an parameter, that includes the following key-value pairs.
+
+        'userid' => <google user id>(mandatory) -- google userid of the
+        person for whom you want the album list.
+
+        'access' => 'private|public'(optional) -- by default, returns the
+        list of albums which have public access. You need to have 'private'
+        value for this key if you want to list out unlisted (private) albums
+        and it requires authentication.
+
+            this method returns a reference to hash whose key is album name and value is number of photos present in that album.
+
+    "add_album(...)"
+            To add an album in your picasaweb. The function takes a reference to hash as an parameter, that includes the following key-value pairs.
+
+        'userid' => <google user id>(mandatory) -- google userid of the
+        person for whom you want the album list.
+
+        'album-name' => <album-name>(mandatory) -- name of album to add
+
+        'access' => 'private|public'(optional) -- by default, it marks the
+        album as public access. You need to have 'private' value for this
+        key if you want to add album as unlisted (private).
+
+        'keywords' => <keywords>(optional) -- tags associated with this
+        album.
+
+    "get_list_of_photos(...)"
+            To download either your or others photos from picasaweb. The function takes a reference to hash as an parameter, that includes the following key-value pairs.
+
+        'userid' => <google user id>(mandatory) -- google userid of the
+        person from whom you want the photos list.
+
+        'album-name' => <album-name>(mandatory) -- name of album to download
+
+        'access' => 'private|public'(optional) -- by default, it will search
+        only for album which has public access. You need to have 'private'
+        value for this key if you want to download album as unlisted
+        (private) and it requires authentication.
+
+        'dir' => <path-to-download>(optional) -- location to download the
+        photos. if not specified, it will create a new directory in the
+        format <userid>_<current-time> and photos get downloaded there.
+
+        'size' => 'small|medium|large' (optional) -- size of the photo.
+        default is large.
+
+    "add_photo(...)"
+            To add a photo to an album in picasaweb. The function takes a reference to hash as an parameter, that includes the following key-value pairs.
+
+        'userid' => <google user id>(mandatory) -- google userid.
+
+        'photo' => <path-of-photo>(mandatory) -- location of photo.
+
+        'album-name' => <album-name>(optional) -- name of album to add the
+        image. by default, it will add the photo in default album.
+
+        'keywords' => <keywords>(optional) -- tags associated with this
+        photo.
+
+        'summary' => <summary>(optional) -- caption associated with this
+        photo.
+
+    For authentication, it uses Picasa::LoginHandler module.
+
+    more functions will be added in future releases.
+
+AUTHOR
+    Copyright (C) 2008, Alagarsamy, <samy@cpan.org<gt>
+
+SEE ALSO
+    Picasa::Album, Picasa::Photo, Picasa::LoginHandler
+

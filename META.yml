@@ -1,0 +1,13 @@
+--- #YAML:1.0
+name:                Picasa
+version:             0.01
+abstract:            perl interface to Picasaweb API
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.31
+distribution_type:   module
+requires:     
+    LWP::UserAgent:                0
+    XML::Parser:                   0
+    Term::ReadPassword:            0
+author:
+    - Alagarsamy <samy@cpan.org>
