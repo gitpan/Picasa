@@ -1,5 +1,8 @@
 Revision history for Perl extension Picasa.
 
+0.02  Mon Apr 21 22:58:20 2008
+    - fixed a documentation bug in Picasa::Photo
+
 0.01  Thu Apr 17 02:42:26 2008
     - first release with minimal functions to add/get list of photos/albums.
 

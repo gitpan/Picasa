@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 our $authorization;
-our $VERSION='0.01';
+our $VERSION='0.02';
 
 sub new {
   my $self = new LWP::UserAgent;
@@ -57,6 +57,7 @@ Picasa - Perl interface to Picasaweb API
     $api->add_photo({'userid'=><google userid>; 'album'=><album-name>; 'photo'=><photo-to-upload>; 'access'=>'public|private'; 'keywords'=><keywords>});
 
 =head1 DESCRIPTION
+
     A simple interface for using Picasaweb API. This is a base class for L<Picasa::Album> and L<Picasa::Photo>, which contains the actual function definition.
 
 =head2 METHODS

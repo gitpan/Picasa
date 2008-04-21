@@ -4,3 +4,6 @@ MANIFEST
 README
 t/Picasa.t
 lib/Picasa.pm
+lib/Picasa/Album.pm
+lib/Picasa/Photo.pm
+lib/Picasa/LoginHandler.pm

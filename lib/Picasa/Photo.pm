@@ -197,9 +197,10 @@ sub add_photo {
 
 =head1 NAME
 
-Picasa::Album -- perl interface for performing all photo related functions in picasaweb
+Picasa::Photo -- perl interface for performing all photo related functions in picasaweb
 
 =head1 DESCRIPTION
+
     A simple interface for performing operations related to photo like adding an photo, downloading list of photos from album. etc.
 
 =head2 METHODS

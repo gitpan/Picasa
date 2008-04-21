@@ -34,6 +34,7 @@ sub loginhandler {
 Picasa::LoginHandler -- perl interface for performing login operations in picasaweb.
 
 =head1 DESCRIPTION
+
   This module will be used by L<Picasa::Album> and L<Picasa::Photo> for doing authentication when adding photo/album or when accessing private album.
 
 =head1 AUTHOR 

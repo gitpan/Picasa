@@ -136,6 +136,7 @@ sub add_album {
 Picasa::Album -- perl interface for performing all album related functions in picasaweb
 
 =head1 DESCRIPTION
+
     A simple interface for performing album related operations like adding an album, getting album info. etc. 
 
 =head2 METHODS
